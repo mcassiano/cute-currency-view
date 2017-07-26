@@ -62,11 +62,13 @@ public class CuteCurrencyView extends FrameLayout {
 
     public void startAnimation() {
 
+        actualEditText.setVisibility(INVISIBLE);
+        animatedPlaceholder.setVisibility(INVISIBLE);
+
         if (TextUtils.isEmpty(actualEditText.getText())
                 && TextUtils.isEmpty(actualEditText.getHint())) {
             // don't do anything if everything is empty
-            // but make the EditText visible and takes the placeholder
-            // out of the hierarchy
+            // but make the EditText visible and say bye to placeholder
             actualEditText.setVisibility(VISIBLE);
             animatedPlaceholder.setVisibility(GONE);
             return;
@@ -139,6 +141,7 @@ public class CuteCurrencyView extends FrameLayout {
                 animatorSet.addListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator animation) {
+                        parentView.removeAllViews();
                         parentView.setVisibility(View.GONE);
                         if (!TextUtils.isEmpty(editText.getText()))
                             editText.setSelection(editText.getText().length());
@@ -187,16 +190,12 @@ public class CuteCurrencyView extends FrameLayout {
         actualEditText.setGravity(Gravity.CENTER);
         actualEditText.setIncludeFontPadding(false);
         actualEditText.setVisibility(INVISIBLE);
-        if (!TextUtils.isEmpty(text))
-            actualEditText.setText(text);
-        if (!TextUtils.isEmpty(hint))
-            actualEditText.setHint(hint);
-        if (textColor != -1)
-            actualEditText.setTextColor(textColor);
-        if (hintColor != -1)
-            actualEditText.setHintTextColor(hintColor);
-        if (textSize != -1)
-            actualEditText.setTextSize(textSize);
+
+        if (!TextUtils.isEmpty(text)) actualEditText.setText(text);
+        if (!TextUtils.isEmpty(hint)) actualEditText.setHint(hint);
+        if (textColor != -1) actualEditText.setTextColor(textColor);
+        if (hintColor != -1) actualEditText.setHintTextColor(hintColor);
+        if (textSize != -1) actualEditText.setTextSize(textSize);
 
         addView(animatedPlaceholder, linearLayoutParams);
         addView(actualEditText, editTextLayoutParams);
