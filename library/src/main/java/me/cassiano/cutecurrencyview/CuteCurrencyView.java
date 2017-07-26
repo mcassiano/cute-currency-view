@@ -173,6 +173,8 @@ public class CuteCurrencyView extends FrameLayout {
 
     private void init(Context context) {
 
+        setClipToPadding(false);
+
         FrameLayout.LayoutParams linearLayoutParams = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         linearLayoutParams.gravity = Gravity.CENTER;
@@ -184,12 +186,15 @@ public class CuteCurrencyView extends FrameLayout {
         animatedPlaceholder = new LinearLayout(context);
         animatedPlaceholder.setVisibility(INVISIBLE);
         animatedPlaceholder.setOrientation(LinearLayout.HORIZONTAL);
+        animatedPlaceholder.setClipToPadding(false);
+        animatedPlaceholder.setPadding(0, 20, 0, 0);
 
         actualEditText = new EditText(context);
         actualEditText.setBackground(null);
         actualEditText.setGravity(Gravity.CENTER);
         actualEditText.setIncludeFontPadding(false);
         actualEditText.setVisibility(INVISIBLE);
+        actualEditText.setPadding(0, 20, 0, 0);
 
         if (!TextUtils.isEmpty(text)) actualEditText.setText(text);
         if (!TextUtils.isEmpty(hint)) actualEditText.setHint(hint);
