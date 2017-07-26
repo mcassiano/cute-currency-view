@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CuteCurrencyView">
+        <attr name="android:text" />
+        <attr name="android:hint" />
+        <attr name="android:textColor" />
+        <attr name="android:textColorHint" />
+        <attr name="android:textSize" />
+        <attr name="autoStart" format="boolean" />
+    </declare-styleable>
+</resources>
