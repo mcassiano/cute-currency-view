@@ -14,9 +14,13 @@ adjusting some stuff, so I'm not publishing it for now. But it is in the works!
   - autoStart (default is true)
 
 ### What still needs to be done:
+  - Tests
   - Decide if releasing with some Currency Formatter or leave this up to user
   - Input Filtering
+  - Tests
   - Performance Investigation (check for memory leaks or too much allocation)
+  - Tests
   - Public/Private API changes
+  - Tests!!!
 
 Again, this a very early preview and feedback is extremely helpful.
