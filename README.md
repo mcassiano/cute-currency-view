@@ -3,7 +3,7 @@
 currency view with sweet animation on start :)
 
 I had to write this for a project and thought to open source it. This is a way more optmized version and I'm still
-adjusting some stuff I'm not publishing it for now. But it is in the works!
+adjusting some stuff, so I'm not publishing it for now. But it is in the works!
 
 ### Supported attributes:
   - text
